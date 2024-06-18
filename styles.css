@@ -1,0 +1,189 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+
+h1{
+  margin: 20px;
+  font-size: 3vw;
+  background-color: white;
+}
+
+.addtasks{
+    height: 3.8vw;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    }
+
+.task{
+    
+    margin: 0px 5px;
+    border: 1.8px solid;
+    height: 100%;
+    border-radius: 35px;
+    padding: 0 20px;
+    transition: all 0.1ms;
+    flex: 2;
+    flex-wrap: wrap;
+    font-size: 1.2vw;
+
+}
+.task:focus{
+    border:1.8px solid #ff0a54;
+    outline: 0 none;
+}
+.datetime{
+    margin: 0px 5px;
+    border: 1.8px solid;
+    height: 100%;
+    border-radius: 35px;
+    padding: 0 20px;
+    flex: 1;
+    font-size: 1.2vw;
+    
+}
+
+.datetime:focus{
+    border:1.8px solid #ff0a54;
+    outline: 0 none;
+}
+.datetime::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    border-radius: 4px;
+    color: #ff0a54;
+}
+
+.addbtn{
+    margin: 0px 5px;
+    border: 0;
+    height: 100%;
+    flex: 0.5;
+    border-radius: 35px;
+    background-color: #ff0a54;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1.2vw;
+}
+.addbtn:hover{
+    background-color: black;
+    
+}
+
+
+.tasks{
+    height: 90%;
+    
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.tasklist{
+    display: flex;
+    justify-content: space-between;
+   margin: 10px 5px;
+    
+}
+
+.content{
+    
+    display: flex;
+    flex-direction: column;
+    flex: 8;   
+}
+.tasktime, .taskdate{
+    margin: 0px 20px;
+    font-size: 1.5vw;
+    color: #ff0a54;
+}
+
+.namecont{
+    padding: 5px 10px;
+    font-size: 2.5vw;
+}
+.datetimecont{
+    display: flex;
+    padding: 10px;
+    justify-content: start;
+    align-items: center;
+}
+.delbtndiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    
+}
+.delbtn{
+    margin: 0px 5px;
+    border: 0;
+    height: 50%;
+    width: 60%;
+    border-radius: 55px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1vw;
+}
+
+.at,.on{
+    font-size: 1vw;
+}
+
+@media screen and (max-width:450px){
+    h1{
+        font-size: 4vw;
+        margin: 0;
+    }
+    .addtasks{
+        padding:  15px 5px;
+    }
+    .task, .datetime{
+        font-size: 1.5vw;
+        padding: 5px;
+    
+    }
+    .task{
+        flex:1
+    }
+    .datetime{
+        flex:0.5
+    }
+    .addbtn{
+        height: 180%;
+        font-size: 1.5vw;
+    }
+
+    .tasktime, .taskdate{
+        margin: 0px 3px;
+        
+    }
+
+    .content{
+    
+        display: flex;
+        flex-direction: column;
+        flex: 4;   
+    }
+    .delbtn{
+        font-size: 1.5vw;
+    }
+    .namecont{
+        padding: 0 10px;
+        font-size: 4vw;
+    }
+    .datetimecont{
+        padding:5px 10px;
+    }
+   
+}
+
