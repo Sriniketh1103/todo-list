@@ -16,7 +16,7 @@ h1{
     display: flex;
     justify-content: space-around ;
     align-items: center;
-    
+    background-color: white;
     position: sticky;
     top: 0;
     padding: 20px;
