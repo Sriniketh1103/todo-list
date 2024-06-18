@@ -14,13 +14,22 @@ h1{
 .addtasks{
     height: 3.8vw;
     display: flex;
-    justify-content: center ;
+    justify-content: space-around ;
     align-items: center;
     
     position: sticky;
     top: 0;
     padding: 20px;
     }
+
+.inputs{
+    display: flex;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+   
+
+}
 
 .task{
     
@@ -45,7 +54,7 @@ h1{
     height: 100%;
     border-radius: 35px;
     padding: 0 20px;
-    flex: 1;
+    flex: 0.6;
     font-size: 1.2vw;
     
 }
@@ -141,27 +150,15 @@ h1{
 
 @media screen and (max-width:450px){
     h1{
-        font-size: 4vw;
-        margin: 0;
+        font-size: 5vw;
+        margin-top: 10px;
+        margin-bottom: 0;
     }
-    .addtasks{
-        padding:  15px 5px;
-    }
-    .task, .datetime{
-        font-size: 1.5vw;
-        padding: 5px;
     
-    }
-    .task{
-        flex:1
-    }
-    .datetime{
-        flex:0.5
-    }
-    .addbtn{
-        height: 180%;
-        font-size: 1.5vw;
-    }
+
+    
+    
+    
 
     .tasktime, .taskdate{
         margin: 0px 3px;
@@ -175,15 +172,54 @@ h1{
         flex: 4;   
     }
     .delbtn{
-        font-size: 1.5vw;
+        font-size: 2vw;
+        height: 50%;
+    }
+    .on, .at{
+        font-size: 3vw;
     }
     .namecont{
         padding: 0 10px;
-        font-size: 4vw;
+        font-size: 7vw;
     }
     .datetimecont{
         padding:5px 10px;
+       
     }
+
+    .taskdate, .tasktime{
+        font-size: 3vw;
+    }
+    .addtasks{
+        flex-direction: column;
+        height: 100px;
+        padding: 0;
+        align-items: flex-start;
+        
+    }
+    .inputs{
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        
+    }
+    .task, .datetime{
+        height: 50%;
+        font-size: 2.5vw;
+        padding:  0 5px;
+       
+
+    }
+    .addbtn{
+        height: 50%;
+        font-size: 3vw;
+    }
+    .task{
+        flex: 1;
+    }
+     
    
 }
 
