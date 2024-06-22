@@ -9,6 +9,7 @@ function addtasks(){
   const year = datetime.slice(0,4)
   const month = datetime.slice(5,7)
   const date = datetime.slice(8,10)
+  const compdate = `${date}/${month}/${year}`
   let time = datetime.slice(11,16) + " AM"
 
   if(time.slice(0,2)>12){
@@ -22,13 +23,39 @@ function addtasks(){
     time = datetime.slice(11,16) + " PM"
   }
 
-  tasks.push({
-    task:task,
-    date:date,
-    month:month,
-    year:year,
-    time:time
-  })
+
+  
+    dateindex = tasks.findIndex(item => item === compdate)
+    
+    if(dateindex!=-1){
+      tasks[dateindex + 1].push(
+        {
+          task:task,
+          date:compdate,
+          month:month,
+          year:year,
+          time:time
+        }
+      )
+    }
+    else{
+      tasks.push(
+        compdate,
+        [{
+        task:task,
+        date:compdate,
+        month:month,
+        year:year,
+        time:time
+      }])
+    }
+ 
+
+
+
+ 
+
+
 
   document.querySelector('.task').value=``
   document.querySelector('.datetime').value=``
@@ -52,32 +79,36 @@ function addtasks(){
 function renderhtml(){
     let taskdiv = document.querySelector('.tasks')
     let todolisthtml = ''
-    for (let i=0;i<tasks.length;i++){
-        todolisthtml +=`
-      
-     <div class="tasklist">
-      <div class="content">
-        <div class="datetimecont">
-        <p class="at">at</p>
-        <p class="tasktime">${ tasks[i].time}</p>
-        <p class="on">on</p>
-        <p class="taskdate">${tasks[i].date}/${tasks[i].month}/${tasks[i].year}</p>
-        </div>
-        <div class="namecont">
-        <p class="taskname">${tasks[i].task}</p>
-        </div>
+    
+    for (let i=0;i<tasks.length;i+=2){
+      todolisthtml += `
+      <div class="taskdate">
+      <p>${tasks[i]}</p>
       </div>
-      <div class="delbtndiv">
-         <button class="delbtn" onclick="
-        tasks.splice(${i},1)
-        renderhtml()">delete</button>
-      </div>
-    </div>
-
+      `
+      for (let j=0;j<tasks[i+1].length;j++){
+        todolisthtml += `
+        <div class="tasklist">
+        <p class="taskname"> ${tasks[i+1][j].task} </p>
+        <p class="tasktime"> ${tasks[i+1][j].time} </p>
+       <button class="delbtn" onclick=" del(${i},${j})">Delete</button>
+        </div>
         `
+      }
     }
 
     taskdiv.innerHTML = todolisthtml
     
 
+}
+
+function del(i,j){
+  tasks[i+1].splice(j,1)
+  renderhtml()
+ 
+   if(tasks[i+1].length === 0){
+    tasks.splice(i+1,1)
+    tasks.splice(i,1)
+    renderhtml()
+  }
 }

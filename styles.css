@@ -12,7 +12,8 @@ h1{
 }
 
 .addtasks{
-    height: 3.8vw;
+    
+    height: 50px;
     display: flex;
     justify-content: space-around ;
     align-items: center;
@@ -31,6 +32,12 @@ h1{
 
 }
 
+.dateadd{
+    display: flex;
+    flex: 1;
+    
+}
+
 .task{
     
     margin: 0px 5px;
@@ -39,7 +46,7 @@ h1{
     border-radius: 35px;
     padding: 0 20px;
     transition: all 0.1ms;
-    flex: 2;
+    flex: 1;
     flex-wrap: wrap;
     font-size: 1.2vw;
 
@@ -54,7 +61,7 @@ h1{
     height: 100%;
     border-radius: 35px;
     padding: 0 20px;
-    flex: 0.6;
+    flex: 1;
     font-size: 1.2vw;
     
 }
@@ -86,139 +93,137 @@ h1{
     
 }
 
-
 .tasks{
-    height: 90%;
+    height: 100px;
     
-    display: flex;
-    flex-direction: column;
-   
+}
+.taskdate{
+    color: #ff0a54;
+    height: 20%;
+    padding: 5px 20px;
+    font-size: 1.3vw;
 }
 
 .tasklist{
+    
     display: flex;
     justify-content: space-between;
-   margin: 10px 5px;
-    
+    align-items: center;
+    padding: 10px;
+    margin-top: 0;
+    height: 40%;
 }
-
-.content{
-    
-    display: flex;
-    flex-direction: column;
-    flex: 8;   
+.taskname{
+    flex: 2;
+    margin: 0 10px;
+    font-size: 2.5vw;
+    width: 70%;
+    overflow: auto;
+   
 }
-.tasktime, .taskdate{
-    margin: 0px 20px;
+.tasktime{
+    flex: 1;
+    margin: 0 10px ;
     font-size: 1.5vw;
     color: #ff0a54;
 }
 
-.namecont{
-    padding: 5px 10px;
-    font-size: 2.5vw;
-}
-.datetimecont{
-    display: flex;
-    padding: 10px;
-    justify-content: start;
-    align-items: center;
-}
-.delbtndiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    
-}
 .delbtn{
-    margin: 0px 5px;
+  
     border: 0;
-    height: 50%;
-    width: 60%;
-    border-radius: 55px;
+    height: 110%;
+    margin-right: 20px;
+    border-radius: 35px;
     background-color: black;
     color: white;
     cursor: pointer;
     transition: all 0.2s;
     font-size: 1vw;
+    width: 8%;
+}
+.delbtn:hover{
+    background-color: #ff0a54;
 }
 
-.at,.on{
-    font-size: 1vw;
-}
+
+
 
 @media screen and (max-width:450px){
     h1{
-        font-size: 5vw;
-        margin-top: 10px;
-        margin-bottom: 0;
-    }
-    
-
-    
-    
-    
-
-    .tasktime, .taskdate{
-        margin: 0px 3px;
         
-    }
-
-    .content{
-    
-        display: flex;
-        flex-direction: column;
-        flex: 4;   
-    }
-    .delbtn{
-        font-size: 2vw;
-        height: 50%;
-    }
-    .on, .at{
-        font-size: 3vw;
-    }
-    .namecont{
-        padding: 0 10px;
-        font-size: 7vw;
-    }
-    .datetimecont{
-        padding:5px 10px;
+        font-size: 8vw;
+        padding: 0;
+        margin: 10px 8px;
        
     }
-
-    .taskdate, .tasktime{
-        font-size: 3vw;
-    }
     .addtasks{
+        display: flex;
         flex-direction: column;
-        height: 100px;
         padding: 0;
-        align-items: flex-start;
+        align-items: start;
+        height: 200px;
+        margin: 0;
+        width: 100vw;
+       
+
         
     }
     .inputs{
         
         display: flex;
+        flex-direction: column;
+        padding: 0px;
+        margin: 10px 0;
+
+        
+    
+    }
+    .task, .datetime{
+        flex:1;
+        font-size: 4vw;
+        
+        
+    }
+
+    .addbtn{
+        font-size: 6vw;
+        flex: 0.5;
+    }
+    .dateadd{
+        margin-top: 10px;
+        
+    }
+
+    .taskdate{
+        padding: 0;
+        font-size: 4vw;
+        margin: 10px 0 0 10px;
+    }
+    .tasklist{
+        display: flex;
+        padding: 0;
+        margin-top: 20px;
         align-items: center;
         justify-content: center;
         
-        
     }
-    .task, .datetime{
-        height: 50%;
-        font-size: 2.5vw;
-        padding:  0 5px;
-       
-
-    }
-    .addbtn{
-        height: 50%;
-        font-size: 3vw;
-    }
-    .task{
+    .taskname{
+        font-size: 5vw;
         flex: 1;
     }
+    .tasktime{
+        font-size: 4vw;
+        flex: 2;
+    }
+    .delbtn{
+        flex: 1;
+        font-size: 4vw;
+    }
+
+
+
+    
+      
      
    
 }
