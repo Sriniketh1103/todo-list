@@ -33,8 +33,6 @@ function addtasks(){
         {
           task:task,
           date:compdate,
-          month:month,
-          year:year,
           time:time
         }
       )
@@ -45,8 +43,6 @@ function addtasks(){
         [{
         task:task,
         date:compdate,
-        month:month,
-        year:year,
         time:time
       }])
     }
