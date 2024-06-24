@@ -1,5 +1,6 @@
-let tasks = []
+let tasks = JSON.parse(localStorage.getItem('tasks')) || []
 
+renderhtml()
 function addtasks(){
   const task = document.querySelector('.task').value
   const datetime= document.querySelector('.datetime').value
@@ -64,6 +65,7 @@ function addtasks(){
 
 
  }
+
  else if(task===``){
     alert("please fill out the Task field")
  }
@@ -73,13 +75,29 @@ function addtasks(){
  
 
 
+
+addtoStorage()
+
   
+}
+
+function addtoStorage(){
+  localStorage.setItem('tasks',JSON.stringify(tasks))
 }
 
 function renderhtml(){
     let taskdiv = document.querySelector('.tasks')
     let todolisthtml = ''
     
+    if(tasks.length === 0){
+      todolisthtml = `<div class="notasks">
+
+      <p> Nothing To Do... </p>
+      </div>
+
+
+      `
+    }
     for (let i=0;i<tasks.length;i+=2){
       todolisthtml += `
       <div class="taskdate">
@@ -111,4 +129,6 @@ function del(i,j){
     tasks.splice(i,1)
     renderhtml()
   }
+
+  addtoStorage()
 }

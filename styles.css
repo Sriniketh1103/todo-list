@@ -96,6 +96,7 @@ h1{
 .tasks{
     height: 100px;
     
+    
 }
 .taskdate{
     color: #ff0a54;
@@ -146,7 +147,16 @@ h1{
 }
 
 
+.notasks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
 
+.notasks p{
+    font-size: 3vw;
+}
 
 @media screen and (max-width:450px){
     h1{
@@ -155,6 +165,9 @@ h1{
         padding: 0;
         margin: 10px 8px;
        
+    }
+    .notasks p{
+        font-size: 6vw;
     }
     .addtasks{
         display: flex;
